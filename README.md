@@ -6,17 +6,27 @@ This repository contains the source code and documentation for the MoCapRunFatig
 
 The MoCapRunFatigue project is structured around the following key objectives:
 
-1. **Replication of Original Study Results**: Initially, we focused on accurately replicating the results presented in the original paper to establish a baseline for our improvements.
+- **Replication of Original Study Results**
+- **Performance Enhancement through Parallel Processing**
+- **Stabilization with Blocked Cross Validation**
+- **Exploration of Multivariate Models**
+- **Experimentation with Rolling Barycenter Smoothing**
 
-2. **Performance Enhancement through Parallel Processing**: We significantly improved the model's execution speed by approximately 18 times by leveraging parallel processing techniques, utilizing a high-performance computing environment with 96 vCPUs and 192 GiB of memory.
+## Key Results and Improvements
 
-3. **Stabilization with Blocked Cross Validation**: To ensure the results are more stable and reflective of real-world conditions, we introduced blocked cross validation into our analysis process.
+Through our enhancements, we achieved significant improvements in the model's performance:
 
-4. **Exploration of Multivariate Models**: Our investigation into multivariate models demonstrated noticeable improvements in mean accuracy, standard deviation, and minimum accuracy, indicating a substantial enhancement over the original model.
+- **Mean Accuracy**: Improved from 95% to 98.5%.
+- **Standard Deviation**: Reduced from 0.077 to 0.035, indicating more consistent performance across runners.
+- **Minimum Accuracy**: Improved from 70% to 86%, showcasing the model's ability to extrapolate to all different types of runners.
+- **Speed**: The model now runs upwards of 18x faster.
 
-5. **Experimentation with Rolling Barycenter Smoothing**: Although we experimented with rolling barycenter smoothing to reduce noise in the input data, this approach did not yield the expected improvements.
+Additionally, the introduction of blocked cross validation has resulted in less variation in results between train/test splits, further stabilizing the model's performance and making it more representative of real-world conditions.
 
 ## Enhancements Detail
+
+### Replication of Original Study Results
+Initially, we focused on accurately replicating the results presented in the original paper to establish a baseline for our improvements.
 
 ### Parallel Processing
 By implementing parallel processing, we were able to reduce the model's execution time significantly, making it more feasible for real-time analysis and larger datasets. This optimization was achieved in a high-performance computing environment, showcasing the scalability of our approach.
@@ -35,6 +45,6 @@ While our experiments with rolling barycenter smoothing did not result in the an
 To replicate our study or explore the enhancements we've made:
 
 - All necessary data has been included in the `data` folder for simplicity.
-- The source code and results are presented in a Jupyter notebook, opting for simplicity and ease of understanding over a typical data science project structure.
+- The source code and results are presented in a Jupyter notebook in the `notebooks` folder, opting for simplicity and ease of understanding over a typical data science project structure.
 
 Navigate to the notebook for a step-by-step guide on how to run the analysis and view the results.
